@@ -30,7 +30,7 @@ services:
     build: ./.docker/web
     container_name: ngnix_container
     ports: 
-      -"8080:8080"
+      - "8080:8080"
 
 volumes:
   postgresql-datavalume:
