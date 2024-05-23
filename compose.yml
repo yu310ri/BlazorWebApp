@@ -7,13 +7,13 @@ services:
   # depends_on:でコンテナの立ち上がる順番を指定。指定したサービスの後に立ち上がるようになる。
   # ports:ホスト側のポート:コンテナ側のポート
   # volumesでホスト側とコンテナ側のディレクトリを同期する場所を指定する.
-  # dotnet:
-  #   build: ./.docker/dotnet
-  #   container_name: dotnet_container
-  #   ports: -"80:80"
-  #   depends_on:
-  #     - db:
-  #   volumes: -./wwwroot:/var/wwwroot
+  dotnet:
+    build: ./.docker/dotnet
+    container_name: dotnet_container
+    ports: -"80:80"
+    depends_on:
+      - db:
+    volumes: -./.docker/web/wwwroot:/var/wwwroot
 
   # #[postgresql]
   # # valume
