@@ -11,9 +11,9 @@ services:
     build: ./.docker/dotnet
     container_name: dotnet_container
     ports: 
-      -"80:80"
+      - "80:80"
     volumes: 
-      -./.docker/web/wwwroot:/var/wwwroot
+      - ./.docker/web/wwwroot:/var/wwwroot
 
   # #[postgresql]
   # # valume
