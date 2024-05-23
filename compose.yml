@@ -11,8 +11,6 @@ services:
     build: ./.docker/dotnet
     container_name: dotnet_container
     ports: -"80:80"
-    depends_on:
-      - db:
     volumes: -./.docker/web/wwwroot:/var/wwwroot
 
   # #[postgresql]
