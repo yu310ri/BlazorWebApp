@@ -8,12 +8,12 @@ services:
   # ports:ホスト側のポート:コンテナ側のポート
   # volumesでホスト側とコンテナ側のディレクトリを同期する場所を指定する.
   # dotnet:
-  #   build: ./.docker/dotnet
-  #   container_name: dotnet_container
-  #   ports: 
-  #     - "80:80"
-  #   volumes: 
-  #     - ./.docker/web/wwwroot:/var/wwwroot
+    # build: ./.docker/dotnet
+    # container_name: dotnet_container
+    # ports: 
+    #   - 80:80
+    # volumes: 
+    #   - ./.docker/web/wwwroot:/var/wwwroot
 
   # #[postgresql]
   # # valume
@@ -26,15 +26,13 @@ services:
   #     - postgresql-datavalume:/var/lib/postgresql/data
 
   #[nginx]
-  web:
-    build: ./.docker/web
-    container_name: nginx_container
-    ports: 
-      - "8080:8080"
-    volumes: 
-      - ./wwwroot:/var/wwwroot
-
-
+    web:
+      build: ./.docker/web
+      container_name: nginx_container
+      ports: 
+        - 8080:8080
+      volumes: 
+        - ./wwwroot:/var/wwwroot
 
 volumes:
   postgresql-datavalume:
